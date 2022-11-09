@@ -13,7 +13,7 @@ end
 Xk = fft(xn,N); out(1, (1:end)) = Xk;
 for j = 1:N
     for n = 1:N
-        Xk(n) = (Xk(n) + xn((j+N)) - xn(j)).*exp(-1i*2*pi*k(n)/N);
+        Xk(n) = (Xk(n) + xn((j+N)) - xn(j)).*exp(1i*2*pi*k(n)/N);
     end
     for m = 1:N
         out(j+1,m) = Xk(m);
